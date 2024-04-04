@@ -81,16 +81,20 @@ class DoublyLinkedList:
             for _ in range(self.length -1, index, -1):
                 temp = temp.prev
         return temp
+    
+    def set_value(self,index, value):
+        temp = self.get(index)
+        if temp : 
+            temp.value = value
+            return True
+        return False
         
     
-my_DLL = DoublyLinkedList(32)
-my_DLL.append(24)
-my_DLL.append(142)
-my_DLL.append(754)
+my_DLL = DoublyLinkedList(11)
+my_DLL.append(3)
+my_DLL.append(23)
+my_DLL.append(7)
 
+my_DLL.set_value(1,4)
 
-print(my_DLL.get(1))
-print(my_DLL.get(2))
-
-
-
+my_DLL.print_list()
