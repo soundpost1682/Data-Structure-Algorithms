@@ -29,9 +29,9 @@ class Graph:
         return False
     
     def remove_vertex(self, vertex):
-        if vertex in self.adj_list.keys():
-            for other_vt in self.adj_list[vertex]:
-                self.adj_list[other_vt].remove(vertex)
+        if vertex in self.adj_list.keys(): # if vertex is exists, 
+            for other_vt in self.adj_list[vertex]: # remove all 'd's from other vertex
+                self.adj_list[other_vt].remove(vertex) # then delete the 'd' vertex
             del self.adj_list[vertex]
             return True
         return False
