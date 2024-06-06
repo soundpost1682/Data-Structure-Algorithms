@@ -30,19 +30,42 @@ class maxHeap:
         self.sink_down(0)
         return max_val
     
+    def sink_down(self, idx):
+        maxIDX = idx
+        while 1:
+            leftIDX = self.leftChild(idx)
+            rightIDX = self.rightChild(idx)
+            if len(self.heap) > leftIDX and self.heap[leftIDX] > self.heap[maxIDX]:
+                maxIDX = leftIDX
+            if len(self.heap) > rightIDX and self.heap[rightIDX] > self.heap[maxIDX]:
+                maxIDX = rightIDX
+            if maxIDX != idx:
+                self.swap(idx, maxIDX)
+                idx = maxIDX
+            else: return 
+
+    
         
 
 
 myHeap = maxHeap()
-myHeap.insert(99)
-myHeap.insert(72)
-myHeap.insert(61)
-myHeap.insert(58)
+myHeap.insert(955)
+myHeap.insert(750)
+myHeap.insert(800)
+myHeap.insert(550)
+myHeap.insert(600)
+myHeap.insert(500)
+myHeap.insert(650)
 
 print(myHeap.heap)
 
-myHeap.insert(100)
+myHeap.remove()
 print(myHeap.heap)
 
-myHeap.insert(75)
+myHeap.remove()
 print(myHeap.heap)
+
+
+
+
+
